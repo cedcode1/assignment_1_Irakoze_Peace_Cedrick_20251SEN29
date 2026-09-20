@@ -42,7 +42,7 @@ ORDER BY o.order_id;
 
 #### Output Screenshot:
 
-[cite: sql 1](sql 1.PNG)
+![Question 1 Result](sql%201.PNG)
 
 ---
 
@@ -51,7 +51,6 @@ ORDER BY o.order_id;
 * **Description:** Lists every item ordered, including product details, category, unit price, and quantity.
 
 
-* **Explanation:** Joins `order_items` with `products` on `product_id` to compute individual item entries across all orders[cite: 1, 2].
 
 ```sql
 SELECT 
@@ -69,7 +68,7 @@ ORDER BY oi.order_item_id;
 
 #### Output Screenshot:
 
-[cite: sql 2](sql 2.PNG)
+![Question 2 Result](spl%202.PNG)
 
 ---
 
@@ -77,8 +76,6 @@ ORDER BY oi.order_item_id;
 
 * **Description:** Lists all customers and their associated orders, including customers who have never placed an order.
 
-
-* **Explanation:** Employs a `LEFT JOIN` starting from `customers` to keep non-ordering accounts in the result set[cite: 1, 4].
 
 ```sql
 SELECT 
@@ -95,7 +92,7 @@ ORDER BY c.customer_id, o.order_date;
 
 #### Output Screenshot:
 
-[cite: sql 3](sql 3.PNG)
+![Question 3 Result](sql%203.PNG)
 
 ---
 
@@ -104,7 +101,7 @@ ORDER BY c.customer_id, o.order_date;
 * **Description:** Calculates total customer expenditure and returns only those spending above the customer population average.
 
 
-* **Explanation:** Uses a CTE (`CustomerSpend`) to aggregate individual spending (`quantity * price`) and filters against `AVG(total_spent)` in the outer query[cite: 1, 5].
+
 
 ```sql
 WITH CustomerSpend AS (
@@ -130,7 +127,7 @@ ORDER BY total_spent DESC;
 
 #### Output Screenshot:
 
-[cite: sql 4](sql 4.PNG)
+![Question 4 Result](sql%204.PNG)
 
 ---
 
@@ -139,7 +136,6 @@ ORDER BY total_spent DESC;
 * **Description:** Ranks all active customers by their cumulative spending, highest first.
 
 
-* **Explanation:** Uses the `RANK()` window function ordered by total revenue in descending order[cite: 1, 6].
 
 ```sql
 WITH CustomerSpend AS (
@@ -164,7 +160,7 @@ FROM CustomerSpend;
 
 #### Output Screenshot:
 
-[cite: sql 5](sql 5.PNG)
+![Question 5 Result](sql%205.PNG)
 
 ---
 
@@ -173,7 +169,6 @@ FROM CustomerSpend;
 * **Description:** Numbers each order per customer chronologically.
 
 
-* **Explanation:** Uses `ROW_NUMBER() OVER (PARTITION BY o.customer_id ORDER BY o.order_date, o.order_id)` to create sequential order indexes[cite: 1, 7].
 
 ```sql
 SELECT 
@@ -193,7 +188,7 @@ ORDER BY o.customer_id, o.order_date;
 
 #### Output Screenshot:
 
-[cite: sql 6](sql 6.PNG)
+![Question 6 Result](sql%206.PNG)
 
 ---
 
@@ -202,7 +197,6 @@ ORDER BY o.customer_id, o.order_date;
 * **Description:** Computes cumulative sales revenue over time ordered by date.
 
 
-* **Explanation:** Calculates order level sums inside a CTE, then applies `SUM(order_revenue) OVER (ORDER BY order_date, order_id)` to generate a cumulative sum[cite: 1, 8].
 
 ```sql
 WITH DailyOrderRevenue AS (
@@ -229,7 +223,7 @@ ORDER BY order_date, order_id;
 
 #### Output Screenshot:
 
-[cite: sql 7](sql 7.PNG)
+![Question 7 Result](sql%207.PNG)
 
 ---
 
@@ -238,7 +232,7 @@ ORDER BY order_date, order_id;
 * **Description:** Shows elapsed days between consecutive orders for customers with repeat visits.
 
 
-* **Explanation:** Applies `LAG(o.order_date)` partitioned by customer to fetch the preceding date, then subtracts dates directly `(order_date - previous_order_date)`[cite: 1, 9].
+
 
 ```sql
 WITH CustomerOrders AS (
@@ -269,7 +263,7 @@ ORDER BY customer_id, order_date;
 
 #### Output Screenshot:
 
-[cite: sql 8](sql 8.PNG)
+![Question 8 Result](sql%208.PNG)
 
 ---
 
