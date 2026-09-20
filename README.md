@@ -1,12 +1,12 @@
 
 # PLSQL Assignment One - Sunrise Supermarket
 
-* **Student Name:** [Your Name]
-* **Student ID:** [Your Student ID]
+* **Student Name:** [Irakoze Peace Cedrick]
+* **Student ID:** [20251SEN259]
 * **DBMS Used:** PostgreSQL 16 (SQL Shell / `psql`)
 
 
-* **Repository Name:** `assignment_1_your_name-your_id`
+* **Repository Name:** `assignment_1_Irakoze Peace Cedrick_20251SEN259`
 
 
 ---
@@ -42,7 +42,7 @@ ORDER BY o.order_id;
 
 #### Output Screenshot:
 
-[cite: 3]
+[cite: sql 1](sql 1.PNG)
 
 ---
 
@@ -69,7 +69,7 @@ ORDER BY oi.order_item_id;
 
 #### Output Screenshot:
 
-[cite: 2]
+[cite: sql 2](sql 2.PNG)
 
 ---
 
@@ -95,7 +95,7 @@ ORDER BY c.customer_id, o.order_date;
 
 #### Output Screenshot:
 
-[cite: 4]
+[cite: sql 3](sql 3.PNG)
 
 ---
 
@@ -130,7 +130,7 @@ ORDER BY total_spent DESC;
 
 #### Output Screenshot:
 
-[cite: 5]
+[cite: sql 4](sql 4.PNG)
 
 ---
 
@@ -164,7 +164,7 @@ FROM CustomerSpend;
 
 #### Output Screenshot:
 
-[cite: 6]
+[cite: sql 5](sql 5.PNG)
 
 ---
 
@@ -193,7 +193,7 @@ ORDER BY o.customer_id, o.order_date;
 
 #### Output Screenshot:
 
-[cite: 7]
+[cite: sql 6](sql 6.PNG)
 
 ---
 
@@ -229,7 +229,7 @@ ORDER BY order_date, order_id;
 
 #### Output Screenshot:
 
-[cite: 8]
+[cite: sql 7](sql 7.PNG)
 
 ---
 
@@ -269,7 +269,7 @@ ORDER BY customer_id, order_date;
 
 #### Output Screenshot:
 
-[cite: 9]
+[cite: sql 8](sql 8.PNG)
 
 ---
 
